@@ -5,7 +5,6 @@ void setup() {
   //Definir los pines como salida
   for (int i = 0;i<=4;i++){
     pinMode(leds[i],OUTPUT);
-    
   }
 }
 
