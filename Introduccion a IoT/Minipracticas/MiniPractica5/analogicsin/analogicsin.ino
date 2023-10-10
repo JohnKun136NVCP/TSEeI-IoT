@@ -19,14 +19,13 @@ void setup() {
 
   ledcSetup(ChanelPWM, freq, resolution);
   ledcAttachPin(PinPWM, ChanelPWM);
-  ledcAttachPin(PinDAC, ChanelPWM);
 }
 
 void loop() {
   int val = state ? 255 : 0;
   for(int i = 0;i<256;i++){
-    float DACsinValue = 135 + 85 * sin( M_PI *i/256);
-    float pwmSinValue = 128 + 128 * sin(PI *i/ 180);
+    float pwmSinValue = 126 + 92* sin(2*M_PI* i / 256);
+    float DACsinValue = 126 * sin(2* i * M_PI / 256) + 127;
     dacWrite(PinDAC, DACsinValue);
     ledcWrite(ChanelPWM, pwmSinValue);  
     Serial.print("PWM:");
