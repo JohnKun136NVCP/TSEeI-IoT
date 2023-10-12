@@ -21,14 +21,15 @@ void setup() {
 void loop() {
   if (BT.available()) // Mientras haya datos por recibir vía bluetooth
   {
-    int val = BT.read(); // Lee un byte de los datos recibidos
-    Serial.print("Recibido: ");
-    Serial.println(val);
-    if (val == 49) { // 1 en ASCII
-      digitalWrite(LED, HIGH);
-    }
-    if (val == 48) { // 0 en ASCII
-      digitalWrite(LED, LOW);
-    }
-  }
+    String data = BT.readStringUntil('\n');//Lega hasta el un salto de linea que cada vez que llegue la informacion
+    if(data.startsWith("Temp:")){ //Si el primer string es de temperatura -> Temp:
+      float temperature = data.substring(5).toFloat(); //Convierte la temperatura de String a float 
+      Serial.println("La temperatura(°C) de ahoria es de: "+String(temperature)); //Imprime la temperatura en modo String.
+      digitalWrite(LED,HIGH); //Enciede el LED.
+    }else if (data.startsWith("Humedad:")){// Si empieza con humedad entonces entra a este if
+      float humidity = data.substring(8).toFloat(); //Convierte de string a float.
+      Serial.println("Humedad (%) recibida: " + String(humidity)); //Imprime todo en un string.
+      digitalWrite(LED,LOW);//Apaga el led.
+      }
+   }
 }
