@@ -1,0 +1,22 @@
+<!DOCTYPE HTML><html>
+<head>
+	<title>PWM Led</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  	<h2>PWM Led</h2>
+ 	<p><span id="textSliderValue">%SLIDERVALUE%</span></p>
+	<p><input type="range" onchange="updateSliderPWM(this)" id="pwmSlider" min="0" max="255" value="%SLIDERVALUE%" step="1" class="slider"></p>
+	<script>
+	function updateSliderPWM(element) {
+  		var sliderValue = document.getElementById("pwmSlider").value;
+  		document.getElementById("textSliderValue").innerHTML = sliderValue;
+  		console.log(sliderValue);
+  		var xhr = new XMLHttpRequest();
+  		xhr.open("GET", "/slider?value="+sliderValue, true);
+  		xhr.send();
+	}
+	</script>
+</body>
+</html>
