@@ -23,11 +23,11 @@ void loop() {
   {
     String data = BT.readStringUntil('\n');//Lega hasta el un salto de linea que cada vez que llegue la informacion
     if(data.startsWith("Temp:")){ //Si el primer string es de temperatura -> Temp:
-      float temperature = data.substring(5).toFloat(); //Convierte la temperatura de String a float 
+      float temperature = (data.substring(5).toFloat())/100; //Convierte la temperatura de String a float 
       Serial.println("La temperatura(°C) de ahoria es de: "+String(temperature)); //Imprime la temperatura en modo String.
       digitalWrite(LED,HIGH); //Enciede el LED.
     }else if (data.startsWith("Humedad:")){// Si empieza con humedad entonces entra a este if
-      float humidity = data.substring(8).toFloat(); //Convierte de string a float.
+      float humidity = (data.substring(8).toFloat())/1003; //Convierte de string a float.
       Serial.println("Humedad (%) recibida: " + String(humidity)); //Imprime todo en un string.
       digitalWrite(LED,LOW);//Apaga el led.
       }
