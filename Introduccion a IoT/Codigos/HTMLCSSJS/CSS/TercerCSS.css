@@ -1,0 +1,23 @@
+/*definiendo una paleta de colores y especificacione*/
+/*pseudo elementos*/
+
+:root{
+    --lila: #D2A1E6;
+    --azulito: #34495E;
+    --azulitodos: #A1C6E6;
+    --naranja: rgba(231,172,95);
+}
+
+/*Existen clases, las cuales son reutilizables 
+*/
+
+.titulo {
+    
+    font-size: 2rem;
+}
+
+.titulo span {
+    font-size: 3rem;
+    color: #34495E;
+     
+}

@@ -1,0 +1,147 @@
+<!--Esta primera linea define la version de html que se esta utilizando -->  
+<!--CREANDO ENLACES -->  
+<!DOCTYPE html> 
+<!-- Apertura, ademas determinamos el lenguaje -->
+<html lang="es">
+<head>
+    <!-- Obs. algunas etiquetas tienen cierre pero otras no-->
+    <!-- UTF-8 es para especificar un formato de caracteres, 
+        otro ejemplo sería ASCII-->
+    <meta charset="UTF-8">
+    <!--Información del navegador-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Michi ejemplo 6 </title>
+
+        <!--Observemos que para implementar CCS abrimos las etiquetas STYLE-->
+        <style>
+            /* OBS: NUEVA FORMA DE COMENTAR 
+            DENTRO DE <sytle> */
+               
+               /*Modifica los elementos h1--> */
+           h1 {
+               text-align: center ;
+               color: blue;
+               text-transform: uppercase;
+           }
+   
+       </style>
+
+</head>
+
+<body>
+
+    <h1> Pamela Torres estudiante de Física Biomédica </h1>
+    
+
+    <section>
+        <h2> Diseñando mi página de HTML</h2>
+
+        <p> 
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-2" width="68" height="68" viewBox="0 0 24 24" stroke-width="1.5" stroke="#009988" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 18.5l-3 -1.5l-6 3v-13l6 -3l6 3l6 -3v7.5" />
+                <path d="M9 4v13" />
+                <path d="M15 7v5.5" />
+                <path d="M21.121 20.121a3 3 0 1 0 -4.242 0c.418 .419 1.125 1.045 2.121 1.879c1.051 -.89 1.759 -1.516 2.121 -1.879z" />
+                <path d="M19 18v.01" />
+              </svg>
+        </p>
+        <p> Ciudad: CDMX </p>
+        <a href="nosotros.html"> Click aquí</a>
+    </section>
+   
+    
+   <main>
+        <h2>Información importante uwu </h2>
+        <section>
+            <h3> Me gustan los michis </h3>
+
+                <p><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-cat" width="68" height="68" viewBox="0 0 24 24" stroke-width="1.5" stroke="#009988" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M20 3v10a8 8 0 1 1 -16 0v-10l3.432 3.432a7.963 7.963 0 0 1 4.568 -1.432c1.769 0 3.403 .574 4.728 1.546l3.272 -3.546z" />
+                    <path d="M2 16h5l-4 4" />
+                    <path d="M22 16h-5l4 4" />
+                    <path d="M12 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                    <path d="M9 11v.01" />
+                    <path d="M15 11v.01" />
+                  </svg></p>
+                <p>Lorem ipsum dolor sit amet, consectetur
+                 adipisicing elit. Reiciendis sed tempore asperiores sunt 
+                 veritatis odio ad, eos dolorum modi neque possimus nobis temporibus distinctio
+                 fugit illo dicta repellat dolorem quod?</p> 
+        </section>
+
+    </main>
+    
+    <!--Creando FORMULARIO-->
+
+    <section>
+        
+        <h2> Contacto </h2>
+        
+        <!--Nos dice que todo lo que este dentro
+        pertenece a un solo formulario
+        se puede comparar con registros o creacion
+        de bases de datos -->
+        
+        <form>
+            <!--Informacion para los usuarios-->
+            
+            <!-- Etiqueta pata colocar texto dentro
+            del formulario-->
+            <fieldset> 
+                <!-- legend sirve para colocar lit legendas :v-->
+                <legend> Contacta a tu michi más cercano </legend>
+                
+                <!--Label y campo para que el usuario escriba-->
+
+            <div> 
+                <label> Nombre </label>   
+                <input type="text" placeholder="Tu nombre ">   
+            </div>
+
+            <div>
+                <label>Teléfono</label>
+                <input type="tel" placeholder = "Tu Teléfono">
+            </div>
+
+            <div>
+                <label>Correo</label>
+                <input type="email" placeholder = "Tu Correo">
+
+            </div>
+
+            <div>
+                <label>Mensaje</label>
+                <textarea> </textarea>
+            </div>
+            
+            <div>
+                <!-- ejemplo submit-->
+                <input type="submit" value = "Enviar1">
+
+                <!-- ejemplo button -->
+
+                <button> Enviar2 </button>
+
+            </div>
+            </fieldset>
+
+        </form>
+        
+    
+    </section>
+
+
+    
+   <footer>
+    <p>Todos los derechos michireservados</p>   
+            <p>meow</p>
+   </footer>
+   
+    </body>
+</html>
+
+<!--Lorem ipsum  -->
+
+
