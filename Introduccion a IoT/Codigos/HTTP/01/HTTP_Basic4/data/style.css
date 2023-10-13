@@ -1,0 +1,13 @@
+html {
+	font-family: Arial;
+	display: inline-block;
+	margin: 0px auto;
+	text-align: center;
+}
+h2 { 
+	font-size: 5.0rem;
+	color: #cd2626;
+}
+p {
+	font-size: 2.0rem; 
+}
