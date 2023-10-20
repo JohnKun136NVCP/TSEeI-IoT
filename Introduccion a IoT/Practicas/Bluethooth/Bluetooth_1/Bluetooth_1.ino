@@ -96,20 +96,15 @@ void bluetoothValues(){
   int val = BT.read();
   if (val == 49){ //Si es 1 en ASCII
     digitalWrite(leds[0], HIGH); //Prende el led 1
-  }
-  if (val == 50){ //Si es 2 en ASCII
+  }else if (val == 50){ //Si es 2 en ASCII
     digitalWrite(leds[1], HIGH);//Prende el led 2
-  }
-  if (val == 51){//Si es 3 en ASCII
+  }else if (val == 51){//Si es 3 en ASCII
     digitalWrite(leds[2], HIGH);//Prende el led 3
-  }
-  if (val == 52){//Si es 4 en ASCII
+  }else if (val == 52){//Si es 4 en ASCII
     digitalWrite(leds[3], HIGH);//Prende el led 4
-  }
-  if (val == 53){//Si es 5 en ASCII
+  }else if (val == 53){//Si es 5 en ASCII
     digitalWrite(leds[4], HIGH);//Prende el led 5
-  }
-  if (val == 48){//Si es 0 en ASCII
+  }else if (val == 48){//Si es 0 en ASCII
     for(int i = 4;i>=0;i--){
       digitalWrite(leds[i], LOW); //Apaga todos los leds
     }
