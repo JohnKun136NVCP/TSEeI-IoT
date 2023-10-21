@@ -99,8 +99,8 @@ float Humedad(){
       Serial.print("La humedad en este momento es de: "); //Imprimir el texto en el serial del monitor serial
       Serial.println(humidity); //Imprime el valor de la humedad en el monitor serial
       timeCounter1 = millis(); //Pusación (tiempo)
-      float hum = dhtStatus(1);
-      return hum; 
+      float hum = dhtStatus(1); // Da un 1 para que nada más regrese la humedad.
+      return hum; //Retorna la humedad
   }
 }
 // Funcion Temperatura
@@ -111,8 +111,8 @@ float Temperatura() {
        Serial.print("La temperatura en este momento es de: ");//Imprimir el texto en el serial del monitor serial
        Serial.println(temperature); //Imprime el valor de la temperatura en el monitor serial
        timeCounter2 = millis(); //Pusación (tiempo)
-       float tem = dhtStatus(0);
-       return tem;
+       float tem = dhtStatus(0);// Da un 0 para que nada más regrese la humedad.
+       return tem;//Retorna la temperatura
   }
 }
 //Evalua constantemente el estado del DHT 11
@@ -128,14 +128,6 @@ float dhtStatus(int value){
     return t; //Regresa la temperatura
   }
 }
-
-
-
-
-//Fotoresistencia
-
-
-
 void loop() {
   client.loop(); //Inicia la comunicacion del cliente del MQTT
   int sensor = analogRead(pinPhoto); //Va leyendo la lectura de la fotoresistencia
