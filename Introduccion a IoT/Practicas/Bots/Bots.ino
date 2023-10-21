@@ -27,7 +27,7 @@ void setup() {
   }
   pinMode(LED,OUTPUT);
   pinMode(pinPhoto, INPUT); // Configura el pin del sensor como entrada.
-  pinMode(PinPOT, INPUT);
+  pinMode(pinPOT, INPUT);
   myBot.wifiConnect(SSID, PASSWORD); // Conecta a la red Wi-Fi especificada.
   myBot.setTelegramToken(TOKEN); // Establece el token de autenticación para el bot de Telegram.+
   delay(2000); // Espera un momento para que la conexión se establezca.
