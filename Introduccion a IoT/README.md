@@ -22,6 +22,8 @@ Este una sección de otra optativa llamada *Seminario de Ciencias de la Computac
 7. [MQTT](https://prezi.com/view/cEorU0bzOpjaUQ7gFef0/)
 8. [Alarmas y Control](https://prezi.com/view/fG35ZOTxyLBCaTHwhPBk/)
 9. [BOTS - Telegram](https://prezi.com/view/H5qsz77ikD6dReYExde3/)
+10. [AWS](https://prezi.com/view/9F7AzJBDYZhvEt4InOMI/?authuser=1)
+11. [Google Assistant](https://prezi.com/view/gG2LPlu3jILdGXgdnYi9/?authuser=1)
 
 
 ## Mini prácticas
@@ -44,6 +46,7 @@ Las prácticas son más largas pero son empleando los conceptos vistos en clase 
 2. [Servidor Web](Practicas/Servidor%20Web/)
 3. [MQTT](Practicas/MQTT/)
 4. [Bots](Practicas/Bots/)
+5. [Google Assistant](Practicas/GoogleAssistant/)
 
 
 ## Códigos por temas.
