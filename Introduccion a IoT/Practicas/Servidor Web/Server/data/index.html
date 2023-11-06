@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Website for IoT</title>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;900&&family=Rubik+Iso&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="style.css"as="style">
+  <link rel="icon" type="image/x-icon" href="em.ico">
+  <link href="style.css" rel="stylesheet">
+  <link href="normalize.css" href="normalize.css"as="style">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <header class="headerImg">
+    <h1 class="titlemain">Iot <span> Website</span> </h1>
+
+    <div class="nav-bg">
+        <nav class="nav-main contenedor">
+            <a href="index.html">Inicio</a>
+            <a href="#">Acerca de mí</a>
+            <a href="#">Artículos y proyectos</a>
+            <a href="#">Contacto</a>
+        </nav> <!--.nav-main contenedor-->
+    </div>
+  </header>
+
+  <div class="article1"> 
+    <br>
+    <p>Esta interfaz el usuario puede monitoriar en tiempo tiempo real los sensores como: </p>
+    <p>El Potenciómetro, Fotoresistencia así como interactuar con el brillo del LED 5 con PWM y los demás LEDs con un interruptor </p>
+    <br>
+ </div>
+
+    <h2>Potenciometro</h2>
+  <p>
+    <span class="poten">Voltaje:</span>
+    <span id="poten_id">%VOLTAJE%</span>
+    <sup class="units">V</sup>
+  </p>
+  <h2>Fotodiodo LDR</h2>
+  <p>
+    <span class="fotodi">INTENSIDAD:</span>
+    <span id="foto_id">%FOTORESISTENCIA%</span>
+    <sup class="units">V</sup>
+  </p>
+  <h2>PWM Led</h2>
+  <p><span id="textSliderValue">%SLIDERVALUE%</span></p>
+	<p><input type="range" onchange="updateSliderPWM(this)" id="pwmSlider" min="0" max="255" value="%SLIDERVALUE%" step="1" class="slider"></p>
+	<script>
+	function updateSliderPWM(element) {
+  		var sliderValue = document.getElementById("pwmSlider").value;
+  		document.getElementById("textSliderValue").innerHTML = sliderValue;
+  		console.log(sliderValue);
+  		var xhr = new XMLHttpRequest();
+  		xhr.open("GET", "/slider?value="+sliderValue, true);
+  		xhr.send();
+	}
+	</script>
+
+    <div class="botones">
+    <h2>Switch Button</h2>
+    %BUTTONPLACEHOLDER%
+    <script>function toggleCheckbox(element) {
+        var xhr = new XMLHttpRequest();
+        if(element.checked){ xhr.open("GET", "/update?output="+element.id+"&state=1", true); }
+        else { xhr.open("GET", "/update?output="+element.id+"&state=0", true); }
+        xhr.send();
+      }
+    </script>
+    </div>
+
+ 
+   
+
+</body>
+  <script src="script.js"></script>
+
+
+</html>
