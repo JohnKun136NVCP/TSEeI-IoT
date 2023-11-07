@@ -23,7 +23,7 @@ while : ;do
     echo -e "\033[5m${green}(___)/________\/_____) |_|   |_| \_)|  __/ |  __/  \___/ |  __/  |_____)/_____) |_| |_| (____/ |_____)"
     echo -e "\033[5m${green}                                   | |    | |           | |                                           "
     echo -e "\033[5m${green}                                   |_|    |_|           |_|                                           "
-    cat src/imgascii/embleme.txt
+    cat src/imgascii/logo.txt
     echo -e "${yellow} IDS Mirror ESP32 ver. 1.0.0${nc}"
     echo -e "${lblue} Made by JohnKun136NVCP and Jose-MPM"
     echo
