@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en-US">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,33 +7,34 @@
 	<link rel="stylesheet" href="estilo_IoT.css">
 </head>
 <body>
-	<!--<div class="ajusteC">
-		<img src="C:\Users\Alejandro\Pictures\imagen_Proyecto_IoT.jpg" alt="imagen1" class="imagen" class="imgRedonda">
+	<div class="img_circular">
+		<img src="C:\Users\Alejandro\Desktop\TSEeI-IoT\Introduccion a IoT\Proyecto\website\img\imagen_Proyecto_IoT.jpg" alt="imagen1" >
 	</div>
-</-->
-	<div class="formulario">
-		<h1>Login</h1>
-    	<form method="post">
-    		<div class="username">
-    			<input type="text" required>
-    			<label>Username</label>
-    		</div>
+	
+	<div >
+	<form class="form">
 
-    		<div class="username">
-    			<input type="password" required>
-    			<label>Contrasena</label>
-    		</div>
+		<h2 class="form_tittle">Login</h2>
+		
+		<div class="form_container">
 
-    		<div class="recordar">
-    			Olvidaste tu contrasena?
-    		</div>
-    		<input type="sumbit" value="Iniciar">
+			<div class="form_group">
+				<input type="text" id="user" class="form_input" placeholder=" ">
+				<label for="user" class="form_label">User: </label>
+				<span class="form_line"></span>
+			</div>
 
-    		<div class="Registrarse">
-    			Quiero hacer el <a href="#">registro</a>
-    		</div>
-    
-    </form>
+			<div class="form_group">
+				<input type="text" id="password" class="form_input" placeholder=" ">
+				<label for="password" class="form_label">Password: </label>
+				<span class="form_line"></span>
+			</div>
+
+			<input type="submit" class="form_submit" value="Enter">
+
+		</div>
+
+	</form>
 	</div>
 	
 </body>
