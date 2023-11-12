@@ -1,6 +1,6 @@
 #!/bin/bash
-trap ' ' 2 20
-clear
+#trap ' ' 2 20
+#Colors
 # Reset
 Color_Off='\033[0m'       # Text Reset
 
@@ -72,49 +72,18 @@ On_IYellow='\033[0;103m'  # Yellow
 On_IBlue='\033[0;104m'    # Blue
 On_IPurple='\033[0;105m'  # Purple
 On_ICyan='\033[0;106m'    # Cyan
-On_IWhite='\033[0;107m'   # White'
-
-directoryCodes="src/"
-
-while : ;do
-    source "${directoryCodes}/info.sh"
-    echo -e "${Cyan}\t\tWelcome $USER, choose an option please:${Color_Off}"
-    echo -e "${IRed} [1]. Install packets (Wireshark and some dependences of python)"
-    echo -e "${IRed} [2]. Get IP from esp32"
-    echo -e "${IRed} [3]. Start IDS and start esp32 inspection"
-    echo -e "${IRed} [4]. Update database local"
-    echo -e "${IRed} [5]. Update from database local to remote database"
-    echo -e "${IRed} [6]. Quit ${Color_Off}${IBlue}"
-    read -p " ==> " input
-    case $input in
-        "1")
-            source "${directoryCodes}/installations.sh" ;;
-        "2")
-            source "python3 pyfiles/getsips.py"
-            ;;
-        "3")
-            read -p "Give the path of your, if you add one: " pathIP
-            if [ -z "$pathIP"]
-            then
-                source "${directoryCodes}/idsinspection.sh"
-            else
-                source "${directoryCodes}/idsinspection.sh" "$pathIP"
-            fi;;
-        "4")
-            echo "OK4"
-            ;;
-        "5")
-            echo "OK5"
-            ;;
-        "6")
-            echo "Quitting the menu..."
-            exit 0
-            ;;
-        *)
-            eval "$input" || clear
-            echo "Invalid option"
-            ;;
-    esac
-done
-
-trap - 2 20
+On_IWhite='\033[0;107m'   # White
+echo -e "${BBlue} ___           ______   __   __                                   _____ ______  _______  _____  ____  "  
+echo -e "${BBlue}(   )    /\    \  ___) |  \ /  |                                 |  ___)\  ___)(   _   )(__  / (___ \ "
+echo -e "${BBlue} | |    /  \    \ \    |   v   | _    ___    ___    ___    ___   | |_    \ \    | | | |   / /    __) )"
+echo -e "${BBlue} | |   / /\ \    > >   | |\_/| || |  / _ \  / _ \  / _ \  / _ \  |  _)    > >   | | | |  (__ \  / __/ "
+echo -e "${BBlue} | |  / /__\ \  / /__  | |   | || | | |_) )| |_) )( (_) )| |_) ) | |___  / /__  | | | |  ___) )| |___ "
+echo -e "${BBlue}(___)/________\/_____) |_|   |_| \_)|  __/ |  __/  \___/ |  __/  |_____)/_____) |_| |_| (____/ |_____)"
+echo -e "${BBlue}                                   | |    | |           | |                                           "
+echo -e "${BBlue}                                   |_|    |_|           |_|                                           ${Color_Off}${BGreen}"
+cat src/imgascii/logo.txt
+echo -e "${Color_Off}"
+echo -e "${BYellow}IDS Mirror ESP32" 
+echo -e "${BYellow}version 1.0.0 (Angel Guardian)"
+echo -e "${BYellow}Made by:\n\tJohnKun136NVCP (Code)\n\tXianya24 (Codes and documentation)\n\tAlejoCM03 (Web design)"
+echo -e "${Color_Off} "
