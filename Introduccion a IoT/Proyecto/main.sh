@@ -82,9 +82,8 @@ while : ;do
     echo -e "${IRed} [1]. Install packets (Wireshark and some dependences of python)"
     echo -e "${IRed} [2]. Get IP from esp32"
     echo -e "${IRed} [3]. Start IDS and start esp32 inspection"
-    echo -e "${IRed} [4]. Update database local"
-    echo -e "${IRed} [5]. Update from database local to remote database"
-    echo -e "${IRed} [6]. Quit ${Color_Off}${IBlue}"
+    echo -e "${IRed} [4]. Update remote database (sudo administrator permissions)"
+    echo -e "${IRed} [5]. Quit ${Color_Off}${IBlue}"
     read -p " ==> " input
     case $input in
         "1")
@@ -101,12 +100,14 @@ while : ;do
                 source "${directoryCodes}/idsinspection.sh" "$pathIP"
             fi;;
         "4")
-            echo "OK4"
+            echo "SUDO permissions -> Using openvpn to connect remote base"
+            read -p "Path of your vpn: " vpnVar
+            read -p "Your path of CSV: " csvPath
+            read -p "User name or root (connect by SSH): " uSSHname
+            read -p "Your IP from your server: "ipServerRemote
+            source "$sudo {directoryCodes}/updatedbs.sh" "$vpnVar" "$csvPath" "$csvPath" "$uSSHname" "$ipServerRemote"
             ;;
         "5")
-            echo "OK5"
-            ;;
-        "6")
             echo "Quitting the menu..."
             exit 0
             ;;
