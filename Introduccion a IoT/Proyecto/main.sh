@@ -104,9 +104,12 @@ while : ;do
             read -p "Path of your vpn: " vpnVar
             read -p "Your path of CSV: " csvPath
             read -p "User name or root (connect by SSH): " uSSHname
-            read -p "Your IP from your server: "ipServerRemote
-            source "$sudo {directoryCodes}/updatedbs.sh" "$vpnVar" "$csvPath" "$csvPath" "$uSSHname" "$ipServerRemote"
-            ;;
+            read -p "Your IP from your server: " ipServerRemote
+            if [ ! -z "$vpnVar" ] && [ ! -z "$csvPath" ] && [ ! -z "$uSSHname" ] && [ ! -z "$ipServerRemote" ]; then
+                sudo "${directoryCodes}/updatedbs.sh" "$vpnVar" "$csvPath" "$csvPath" "$uSSHname" "$ipServerRemote" 
+            else
+                echo "ERROR. MAKE SURE IF YOU ARE GIVING CORRECT PATH"
+            fi;;
         "5")
             echo "Quitting the menu..."
             exit 0
