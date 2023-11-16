@@ -64,21 +64,24 @@ class esp32Data(csvFiles): #Subclass esp32Data sends
             if(self.lengthsize<=self.greenRange):
                 time.sleep(3)
                 self.messageSign = "0" #Sends a 0
-                self.messagePort = "Ok"#Sends message "OK"
+                self.messagePort = "Everything's fine"#Sends message "OK"
                 self.openSocket(self.messageSign,self.messagePort)
                 time.sleep(3)
-            if(self.lengthsize>self.greenRange and self.lengthsize<=self.yellowRange):
+                print(self.messagePort)
+            elif(self.lengthsize>self.greenRange and self.lengthsize<=self.yellowRange):
                 time.sleep(3)
                 self.messageSign = "1"#Sends a 1. Sends message "size of packet"
                 self.messagePort = "Warning! Length packet: "+str(self.lengthsize)
                 self.openSocket(self.messageSign,self.messagePort)
                 time.sleep(3)
-            if(self.lengthsize>=self.redRange):
+                print(self.messagePort)
+            elif(self.lengthsize>=self.redRange or self.lengthsize>self.yellowRange):
                 time.sleep(3)
                 self.messageSign = "-1"#Sends a -1. Sends message "ipsrc and ipdst"
                 self.messagePort = str(self.ipsrc)+"==>"+str(self.ipdst)+".Protocol: "+str(self.protocol)
                 self.openSocket(self.messageSign,self.messagePort)
                 time.sleep(3)
+                print(self.messagePort)
 
 #This is the test
 #pa = "/your/directory/example.csv"
