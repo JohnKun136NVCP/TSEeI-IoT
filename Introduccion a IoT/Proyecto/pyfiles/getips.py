@@ -7,7 +7,7 @@ def getIPs(): #Get ip from esp32 by SERIAL
     try:
         nameport = serport.ports() #Show ports
         esp = serial.Serial(nameport,115200)#Port selected
-        print("REBOOT your ESP32 to get IPS")#Make sure a reboot to work
+        print("REBOOT/RESET (EN button) your ESP32 to get IPS")#Make sure a reboot to work
         while (len(ips)<1):#Only send ip from esp32
             line = esp.readline().decode('utf-8').rstrip()
             ips.append(line)#IP
