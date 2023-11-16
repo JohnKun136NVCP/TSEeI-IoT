@@ -82,9 +82,3 @@ class esp32Data(csvFiles): #Subclass esp32Data sends
                 self.openSocket(self.messageSign,self.messagePort)
                 time.sleep(3)
                 print(self.messagePort)
-
-#This is the test
-#pa = "/your/directory/example.csv"
-#ip = "x.x.x.x"
-#esp32 = esp32Data(ip,pa)
-#esp32.systemAlarm()
