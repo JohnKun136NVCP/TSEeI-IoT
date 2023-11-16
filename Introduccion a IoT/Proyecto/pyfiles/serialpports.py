@@ -1,4 +1,3 @@
-import serial
 import serial.tools.list_ports as list_ports
 def ports():
     # code by michalmonday onhttps://github.com/michalmonday/CSV-Parser-for-Arduino/tree/master/examples/reading_from_computer_python/arduino_serial.py
