@@ -15,6 +15,6 @@ if len(sys.argv)== 3:
         esp32IDS.systemAlarm()
     else:
         print("May your CSV doesn't exist or your ip file doesn't exist. Please, check your directories.")
-        
+
 else:
     print("Script needs esp32listner.py ipfilepath ipfilepath")
