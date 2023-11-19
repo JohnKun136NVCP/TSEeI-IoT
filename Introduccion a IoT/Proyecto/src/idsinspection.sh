@@ -1,5 +1,5 @@
 #!/bin/bash
-#trap ' ' 2 20
+trap ' ' 2 20
 #colors
 cyan='\033[0;36m'
 lblue='\033[1;34m'
@@ -45,7 +45,13 @@ function wiresharkFunction (){
 }
 
 function esp32Ids(){
-    cd pyfiles/;source "python3 esp32listener.py"
+    cd ../
+    cd pyfiles/
+    if [ ! -z "$1" ] && [ ! -z "$2" ]; then
+        python3 esp32listener.py "$1" "$2"
+    else
+        echo "ERROR. MAKE SURE IF YOU ARE GIVING CORRECT PATH"
+    fi
 }
 
 echo -e "${cyan} Welcome to IDS Mirrow, please check, you save  EPSP32's IP address on file. If not it'll take default path (~/pyfiles/.ip/ip.txt)"
@@ -59,7 +65,9 @@ then
     then
         ip="$(cat "$file_default")"
         wiresharkFunction $ip
-        #esp32Ids //Until esp32 pyfile will work
+        read -p "Path of your CSV saved: " csvSavedFile
+        esp32Ids "$csvSavedFile" "$file"
+        pwd
         cd ..
     else
         echo "First execute number 2 option from main.sh to get your IP"
@@ -72,7 +80,9 @@ else
     then
         ip="$(cat $file)"
         wiresharkFunction $ip
-        #esp32Ids //Until esp32 pyfile will work
+        read -p "Path of your CSV saved: " csvSavedFile
+        esp32Ids "$csvSavedFile" "$file"
+        pwd
         cd ..
     else
         echo "Your path or file doesn't exist"
@@ -80,4 +90,4 @@ else
         exit 1
     fi  
 fi
-#trap - 2 20
+trap - 2 20
