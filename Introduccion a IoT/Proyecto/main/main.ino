@@ -1,8 +1,8 @@
 
 //LEDS AND BUZZER
 #define LED_1 14 
-#define LED_2 26 
-#define LED_3 27
+#define LED_2 27 
+#define LED_3 26
 #define Bzzer 4
 //LIBRARIES
 //Library for WiFi
@@ -10,14 +10,10 @@
 #include "ESPAsyncWebServer.h" //Server for ESP32
 //Library for credentials and passwords
 #include "Credentials.h"
-//Library for emailclient
-#include <ESP_Mail_Client.h>
 //Library for making ping to website
 #include <ESP32Ping.h>
 //Library for TelegramBot
 #include <CTBot.h>
-#define SMTP_HOST  "smtp.gmail.com"
-#define SMTP_PORT esp_mail_smtp_port_465 //Port to SMTP
 
 //GLOBAL VARIABLES
 int pingNumber = 4;
@@ -34,7 +30,6 @@ bool dangerMessage = false;
 //Objects
 CTBot myBot; //Telegram bot object
 TBMessage msg; // Object to get messages from Telegram Bot
-SMTPSession smtp; //Object used SMTPSession for SMTP transport
 WiFiServer server(80); // Puerto 80 es común para HTTP, pero puedes usar otro
 
 
