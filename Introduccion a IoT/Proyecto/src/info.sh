@@ -82,8 +82,9 @@ echo -e "${BBlue}(___)/________\/_____) |_|   |_| \_)|  __/ |  __/  \___/ |  __/
 echo -e "${BBlue}                                   | |    | |           | |                                           "
 echo -e "${BBlue}                                   |_|    |_|           |_|                                           ${Color_Off}${BGreen}"
 cat src/imgascii/logo.txt
+nameVersion="$(cat src/imgascii/versionsProgram.txt)"
 echo -e "${Color_Off}"
 echo -e "${BYellow}IDS Mirror ESP32" 
-echo -e "${BYellow}version 1.0.0 (Angel Guardian)"
+echo -e "${BYellow}version 1.0.0. $nameVersion"
 echo -e "${BYellow}Made by:\n\tJohnKun136NVCP (Code)\n\tXianya24 (Codes and documentation)\n\tAlejoCM03 (Web design)"
 echo -e "${Color_Off} "
