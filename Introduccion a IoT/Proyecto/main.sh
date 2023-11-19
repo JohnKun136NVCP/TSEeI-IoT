@@ -92,8 +92,8 @@ while : ;do
             source "python3 pyfiles/getsips.py"
             ;;
         "3")
-            read -p "Give the path of your, if you add one: " pathIP
-            if [ -z "$pathIP"]
+            read -p "Give the path of your ESP32 IP (DEFAULT PATH -> Empty option): " pathIP
+            if [ -z "$pathIP" ]
             then
                 source "${directoryCodes}/idsinspection.sh"
             else
