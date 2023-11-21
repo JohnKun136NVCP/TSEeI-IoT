@@ -40,7 +40,7 @@ function wiresharkFunction (){
     fi
   done
   sleep 0.5
-  tail -f -c 0 "$wirefile".pcap | wireshark -k -i "$intNetwork" -R "ip.addr == $1" -Y "ip.addr == $1" -w "$wirefile".pcap;
+  tail -f -c 0 "$wirefile".pcap | wireshark -k -i "$intNetwork" -R "ip || ip.src == $1" -Y "ip || ip.src == $1" -w "$wirefile".pcap;
   echo "Data saved it"
 }
 
@@ -56,24 +56,8 @@ function esp32Ids(){
 
 echo -e "${cyan} Welcome to IDS Mirrow, please check, you save  EPSP32's IP address on file. If not it'll take default path (~/pyfiles/.ip/ip.txt)"
 file=$1
-file_default="pyfiles/.ip/ip.txt"
-if [ -z "$file" ]
+if [ ! -z "$file" ]
 then
-    echo "Taking default path..."
-    sleep 1
-    if [ -f "$file_default" ]
-    then
-        ip="$(cat "$file_default")"
-        wiresharkFunction $ip
-        read -p "Path of your CSV saved: " csvSavedFile
-        esp32Ids "$csvSavedFile" "$file"
-        pwd
-        cd ..
-    else
-        echo "First execute number 2 option from main.sh to get your IP"
-        exit 1
-    fi
-else
     echo "Getting ip..."
     sleep 0.5
     if [ -f "$file" ]
@@ -82,12 +66,13 @@ else
         wiresharkFunction $ip
         read -p "Path of your CSV saved: " csvSavedFile
         esp32Ids "$csvSavedFile" "$file"
-        pwd
         cd ..
     else
         echo "Your path or file doesn't exist"
         echo "First execute number 2 option from main.sh to get your IP"
         exit 1
     fi  
+else
+    echo "FILE EMPTY"
 fi
 trap - 2 20
