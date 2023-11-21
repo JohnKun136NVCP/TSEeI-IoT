@@ -8,7 +8,7 @@ spinerFunction(){
         printf "%s\b" "${chars:i++%n:1}"
     done
 }
-openvpn "$1" &> /dev/null &
+sudo openvpn "$1" &> /dev/null &
 firstLine="$(head -1 $2)"
 if [ ! -d .temcsv/ ];then
     mkdir .temcsv
@@ -32,7 +32,7 @@ while read i; do
     printf "Saving remote data"
     spinerFunction &
     sleep 3
-ssh "$3"@"$4" &> /dev/null<< EOF
+sudo ssh "$3@$4"<< EOF
 mariadb -u root -proot ids -e "INSERT INTO traffic (time, ipsrc, ipdst, protocol, packlen, info) VALUES ($tt, '$ipsrc', '$ipdst', '$protocol', $length, '$info')"
 
 EOF
