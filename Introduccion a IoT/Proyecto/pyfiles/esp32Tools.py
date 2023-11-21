@@ -79,6 +79,8 @@ class esp32Data(csvFiles): #Subclass esp32Data sends
         super().__init__(ip,name)
         self.messageSign = "" #Values for leds to ESP32
         self.messagePort = ""#Local message
+        self.counterMessage = 0
+        self.counterTotal = len(self.data)
     def openSocket(self,typeMessage): #Open a socket
         self.messageSign = typeMessage
         try:
@@ -91,21 +93,21 @@ class esp32Data(csvFiles): #Subclass esp32Data sends
     def systemAlarm(self):
         try:
             self.data = self.removeAdditionalID()
-        except:
-            pass
+        except:pass
         for self.ipsrc ,self.ipdst,self.protocol,self.lengthsize in zip(self.data["Source"],self.data['Destination'],self.data["Protocol"],self.data["Length"]): #loop for values from csv file
+            self.counterMessage +=1
             time.sleep(4)
             if(self.lengthsize<=self.greenRange):
                 self.messageSign = "0" #Sends a 0
                 self.openSocket(self.messageSign)
                 self.messagePort = "Everything's Fine"
-                print(self.messagePort)
+                print("({}/{}) {}".format(self.counterMessage,self.counterTotal,self.messagePort))
                 time.sleep(6)
             elif(self.lengthsize>self.greenRange and self.lengthsize<=self.yellowRange):
                 self.messageSign = "1"#Sends a 1. Sends message "size of packet"
                 self.messagePort = "Warning! Length packet: "+str(self.lengthsize)
                 self.openSocket(self.messageSign)
-                print(self.messagePort)
+                print("({}/{}) {}".format(self.counterMessage,self.counterTotal,self.messagePort))
                 time.sleep(6)
             elif(self.lengthsize>=self.redRange or self.lengthsize>self.yellowRange):
                 self.messageSign = "-1"#Sends a -1. Sends message "ipsrc and ipdst"
@@ -116,6 +118,6 @@ class esp32Data(csvFiles): #Subclass esp32Data sends
                 esp32Data.bodyGet(self,bodyMessageComplete)
                 esp32Data.sendEmail(self)
                 self.openSocket(self.messageSign)
-                print(self.messagePort)
+                print("({}/{}) {}".format(self.counterMessage,self.counterTotal,self.messagePort))
                 time.sleep(6)
 
