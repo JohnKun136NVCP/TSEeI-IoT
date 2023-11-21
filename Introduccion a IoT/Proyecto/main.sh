@@ -89,15 +89,15 @@ while : ;do
         "1")
             source "${directoryCodes}/installations.sh" ;;
         "2")
-            source "python3 pyfiles/getsips.py"
+            python3 pyfiles/getips.py
             ;;
         "3")
-            read -p "Give the path of your ESP32 IP (DEFAULT PATH -> Empty option): " pathIP
-            if [ -z "$pathIP" ]
+            read -p "Give the path of your ESP32 IP: " pathIP
+            if [ ! -z "$pathIP" ]
             then
-                source "${directoryCodes}/idsinspection.sh"
-            else
                 source "${directoryCodes}/idsinspection.sh" "$pathIP"
+            else
+                echo "BAD REQUEST"
             fi;;
         "4")
             echo "SUDO permissions -> Using openvpn to connect remote base"
@@ -106,7 +106,7 @@ while : ;do
             read -p "User name or root (connect by SSH): " uSSHname
             read -p "Your IP from your server: " ipServerRemote
             if [ ! -z "$vpnVar" ] && [ ! -z "$csvPath" ] && [ ! -z "$uSSHname" ] && [ ! -z "$ipServerRemote" ]; then
-                sudo "${directoryCodes}/updatedbs.sh" "$vpnVar" "$csvPath" "$csvPath" "$uSSHname" "$ipServerRemote" 
+                sudo "${directoryCodes}/updatedbs.sh" "$vpnVar" "$csvPath" "$uSSHname" "$ipServerRemote" 
             else
                 echo "ERROR. MAKE SURE IF YOU ARE GIVING CORRECT PATH"
             fi;;
