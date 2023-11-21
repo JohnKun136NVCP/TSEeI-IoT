@@ -1,76 +1,59 @@
-<p align="right">
-    <img src="https://www.actus.today/wp-content/uploads/2020/07/IoT_1@2x.png" width="60px" height="60px" align="right">
+<p align="center"> 
+<img src="img/LogoSecurity.png" width="400px "height="400px" align="center"> 
 </p>
 
-# Introducción a IoT
+## Semester project
+# Intrusion detection system with ESP32
+The Esp32 is a feature-rich MCU with integrated Wi-Fi and Bluetooth connectivity for a wide range of applications:
 
-Este una sección de otra optativa llamada *Seminario de Ciencias de la Computación A* titulada ***Introducción a IoT (Internet de las Cosas)***. Esta parte del repositorio está seccionada en varias partes:
+1. [Robust desing](#Robust-desing)
 
-1. [Presentaciones](#presentaciones)
-2. [Mini prácticas](#minipracticas)
-3. [Prácticas](#prácticas)
-4. [Códigos](#códigos-por-temas)
+ESP32 is able to operate reliably in industrial environments, with operating temperatures ranging from -40 °C to +125 °C. Powered by advanced calibration circuitry, ESP32 can dynamically eliminate external circuit imperfections and adapt to changes in external conditions.
 
-## Presentaciones.
-1. [Introducción al Internet de las Cosas (Presentación)](https://prezi.com/view/SuXJykshTpRWr5ztCS1w/)
-2. [Dispositivos del Internet de las Cosas(Señales y Dispositivos)](https://prezi.com/view/QR4xJOTalmijU8BeV2Uj/)
-3. [Conectividad en el Internet de las Cosas(Conectividad en IoT)](https://prezi.com/view/0xfnZNzdLGLwQBaPnSc2/)
-4. [HTTP](https://prezi.com/view/XcevakciDY6aPxQhI0aW/)
-5. [SPIFF](https://prezi.com/view/ujag88EyEUemeX1UYqhs/)
-    * [Video de instalación en Arduino](https://www.youtube.com/watch?v=3DvxJuN6Rag)
-6. [Ciberseguridad](https://prezi.com/view/u6BXLkeo5ioOhT4NrLKG/)
-7. [MQTT](https://prezi.com/view/cEorU0bzOpjaUQ7gFef0/)
-8. [Alarmas y Control](https://prezi.com/view/fG35ZOTxyLBCaTHwhPBk/)
-9. [BOTS - Telegram](https://prezi.com/view/H5qsz77ikD6dReYExde3/)
-10. [AWS](https://prezi.com/view/9F7AzJBDYZhvEt4InOMI/?authuser=1)
-11. [Google Assistant](https://prezi.com/view/gG2LPlu3jILdGXgdnYi9/?authuser=1)
+2. [Ultra low power consumption](#Ultra-low-powe-consumptiom)
 
+Designed for mobile devices, wearable electronics and IoT applications, ESP32 achieves ultra-low power consumption with a combination of several types of proprietary software. ESP32 also includes state-of-the-art features such as fine-grained clock synchronization, multiple power modes and dynamic power scaling.
 
-## Mini prácticas
+3. [High level of integration](#High-level-of-integration)
 
-Las mini prácticas son pequeños ejercicios que vienen en la sección de [Minipracticas](/Minipracticas/) en donde viene el archivo con lo que se pide, si uno de ustedes tiene una solución diferente, también está la solución empleada (puede mejorarse). Está seccionada de la siguiente manera:
+ESP32 is highly integrated with built-in antenna switches, RF balun, power amplifier, low noise receive amplifier, filters and power management modules. ESP32 adds invaluable functionality and versatility to your applications with minimal printed circuit board (PCB) requirements.
 
-1. [Ojo](Minipracticas/MiniPractica1/)
-2. [Salidas Digitales](Minipracticas/MiniPractica2/)
-3. [Entradas analógas](Minipracticas/MiniPractica3/)
-4. [Entradas análogicas](Minipracticas/MiniPractica4/)
-5. [Salidas Análogas](Minipracticas/MiniPractica5/)
+4. [Hybrid WiFi and Bluetooth chip](#Hybrid-WiFi-and-Bluetooth-chip)
+
+ESP32 can operate as a complete stand-alone system or as a slave device to a host MCU, reducing the communications stack overhead on the main application processor. ESP32 can interface with other systems to provide Wi-Fi and Bluetooth functionality through its SPI/SDIO or I2C/UART interfaces.
+
+## IDS (Intrusion Detection Systems)
+
+Technological advances in the digital age have led to an exponential increase in the amount of information and data stored online. As organizations and individuals increasingly rely on the connectivity and accessibility of their systems, the threat of malicious intrusions and cyber attacks also increases. In this context, Intrusion Detection Systems (IDS) emerge as crucial elements in IT security defense.
+
+An IDS is a tool designed to monitor and analyze network traffic for suspicious activity or anomalous behavior that may indicate an intrusion attempt or security breach. Its importance lies in several fundamental aspects that contribute to the integrity, confidentiality and availability of information systems.
+
+1. First, IDSs play a key role in early identification of potential threats. By analyzing traffic patterns and anomalous behavior, these systems can detect intrusions in their early stages, enabling a fast and efficient response to mitigate risks before they cause significant damage.  This is crucial in a digital environment where speed of detection and response is essential to minimize the impact of attacks.
+
+2.  IDSs are essential for data collection and forensic reporting. By recording and analyzing security events, these systems provide valuable information that can be used to understand the nature of attacks, identify recurring patterns and strengthen existing security measures. This retrospective knowledge is essential to improving an organization's long-term security posture.
 
 
+3. Another crucial aspect of IDSs is their ability to reduce the workload of security teams. With the ever-increasing volume of data and threats, security analysts face significant challenges. IDSs automate event monitoring and analysis, allowing security professionals to focus on more advanced investigations and strategic decision making. This not only improves operational efficiency, but also increases responsiveness to more sophisticated threats.
 
-## Prácticas
+4. Finally, Intrusion Detection Systems play a crucial role in protecting information systems in an increasingly interconnected digital world. Their ability to identify early threats, collect forensic data and alleviate the workload of security teams makes them indispensable tools for ensuring information integrity and security. In an environment where cybersecurity is paramount, effective implementation of IDSs is an essential measure for safeguarding digital assets and preserving trust in the information age.
 
-Las prácticas son más largas pero son empleando los conceptos vistos en clase y también viene con el PDF donde puede consultarse lo que se pida. Así también, viene con la solución a cada práctica (igualmente se puede resolver de manera diferente). Esto lo puedes encontrar en la seccion de [Practicas](Practicas/). Estan seccionadas de la siguiente manera:
+## Project description 
 
-1. [Bluetooth](Practicas/Bluethooth/)
-2. [Servidor Web](Practicas/Servidor%20Web/)
-3. [MQTT](Practicas/MQTT/)
-4. [Bots](Practicas/Bots/)
-5. [Google Assistant](Practicas/GoogleAssistant/)
+Within the framework of this project, we have developed an Intrusion Detection System (IDS) in which the ESP32 microcontroller plays a central role. Within this architecture, we have implemented a configuration composed of three light emitting diodes (LEDs), each designed with specific functionalities. The first LED, green in color, indicates the absence of threats; the second, yellow in hue, warns of possible danger; and the last, red in color, acts as a danger alarm, simultaneously activating a buzzer for sound alerts. In parallel, when the functionality associated with the red LED is activated, it generates a notification sent to the user through the Telegram messaging platform, as well as an alert message sent to the email of the same user registered in the GMAIL account.
 
+## Acknowledgments
 
-## Códigos por temas.
-Está categorizada en orden ascendente.
+For their support in the realization of this project and the material used in the project we would like to thank
+ - Ma. Alejandro Pompa García
+ - David Elias González García
+ - Alejandro Cortes Mora
 
-1. [Códigos 01: Salidas digitales](Codigos/SalidasDigitales/)
-2. [Códigos 02: Entradas digitales](Codigos/EntradasDigitales/)
-3. [Códigos 03: Entradas analógicas](Codigos/EntradasAnalogicas/)
-4. [Códigos 04: Salidas analógicas (DAC)](Codigos/SalidasAnalógicasDAC/)
-5. [Códigos 05: Salidas analógicas (PWM)](Codigos/SalidasSalida(PWM)/)
-6. [Códigos 06: Bluetooth](Codigos/Bluetooth/)
-7. [Códigos 07: WIFI 01](Codigos/Wifi/01/)
-8. [Códigos 08: WIFI 02](Codigos/Wifi/02/)
-9. [Códigos 09: HTML - CSS](Codigos/HTMLCSSJS/)
-10. [Códigos 10: HTTP 01](Codigos/HTTP/01/)
-11. [Códigos 11: HTTP 02](Codigos/HTTP/02/)
-12. [Códigos 12: Encriptación AES](Codigos/EncriptacionAES/)
-13. [Códigos 13: MQTT](Codigos/MQTT/)
-14. [Códigos 14: Alarmas y control](Codigos/AlarmasyControl/)
-15. [Códigos 15: Bot Telegram](Codigos/BotTelegram/)
-16. [Códigos 16: MariaDB & Mosquitto](Codigos/Database/)
+## Bibliografía
 
+1. Ashoor, A. S., & Gore, S. (2011). Importance of intrusion detection system (IDS). International 
 
+2. Journal of Scientific and Engineering Research, 2(1), 1-4.
 
+3. ESP32 Wi-Fi & Bluetooth SOC | Espressif Systems. (s. f.). https://www.espressif.com/en/products/socs/esp32
 
-
-Dueño de presentaciones y también material de códigos  de ejemplo es a M. Ing. Valente Vázquez Velázquez. Página oficial del curso es: https://sites.google.com/ciencias.unam.mx/introduccion-iot-fc/inicio.
+In charge of the project: Physics student Juan Ángeles Hernández and Biology student Xianya Itzel Díaz de León Márquez. for the subject Internet of Things, taught by M. Ing. Valente Vázquez Velázquez.
