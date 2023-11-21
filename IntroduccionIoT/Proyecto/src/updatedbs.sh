@@ -29,21 +29,21 @@ while read i; do
     length="$(cut -d "," -f 5 <<<"$i")"
     info="$(cut -d "," -f 6 <<<"$i")"
     printf "\n"
-    printf "Saving remote data"
+    printf "Saving remote data "
     spinerFunction &
     sleep 3
-sudo ssh "$3@$4"<< EOF
-mariadb -u root -proot ids -e "INSERT INTO traffic (time, ipsrc, ipdst, protocol, packlen, info) VALUES ($tt, '$ipsrc', '$ipdst', '$protocol', $length, '$info')"
+    kill "$!"
+    ssh "$3@$4" << EOF
+    mariadb -u root -proot ids -e "INSERT INTO traffic (time, ipsrc, ipdst, protocol, packlen, info) VALUES ($tt, '$ipsrc', '$ipdst', '$protocol', $length, '$info')"
 
 EOF
 done<.tem
-kill "$!"
 echo "Saved Data returning to main menu..."
 rm -rf .temcsv
 cd ../..
 echo "Exit from VPN..."
 pkill openvpn
 sleep 3
-
+clear
 
     
