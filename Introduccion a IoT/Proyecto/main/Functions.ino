@@ -35,8 +35,8 @@ void idsLedUP(){ //Function to connect a server to send information as WI
       }
       client.stop();
       telegramBotService();
+      //pingTargets();//Generate traffic
     }
-    pingTargets();//Generate traffic
   }
 }
 
@@ -44,13 +44,16 @@ void idsLedUP(){ //Function to connect a server to send information as WI
 //Ping tags
 void pingTargets(){
   bool google = Ping.ping("www.google.com",pingNumber);
-  bool telegram = Ping.ping("web.telegram.org",pingNumber);
   bool tbs = Ping.ping("www.tbs.co.jp",pingNumber);
   bool github = Ping.ping("github.com",pingNumber);
   bool mywebsite = Ping.ping("yoshiokeimakun.me",pingNumber);
-  if(!google || !telegram ||!tbs || !github || !mywebsite){
+  if(!google ||!tbs|| !github || !mywebsite){
+    digitalWrite(LED_4,LOW);
     return;
+  }else{
+    digitalWrite(LED_4,HIGH);
   }
+  delay(10);
 }
 //Telegram Bots
 //Options functions for Telegram bot

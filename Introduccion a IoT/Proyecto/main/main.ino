@@ -3,6 +3,7 @@
 #define LED_1 14 
 #define LED_2 27 
 #define LED_3 26
+#define LED_4 25
 #define Bzzer 4
 //LIBRARIES
 //Library for WiFi
@@ -38,6 +39,7 @@ void setup() {
   pinMode(LED_1,OUTPUT);
   pinMode(LED_2,OUTPUT);
   pinMode(LED_3,OUTPUT);
+  pinMode(LED_4,OUTPUT);
   pinMode(Bzzer,OUTPUT);
   WiFi.begin(ssid_STA, password_STA);
   while (WiFi.status() != WL_CONNECTED) {
@@ -48,6 +50,7 @@ void setup() {
   server.begin();
 }
 void loop() {
+  pingTargets();
   idsLedUP();//Leds, alerts and PWM
   telegramBotService();//Telegram bot
 }
