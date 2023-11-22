@@ -71,6 +71,3 @@ Está categorizada en orden ascendente.
 
 
 
-
-
-Dueño de presentaciones y también material de códigos  de ejemplo es a M. Ing. Valente Vázquez Velázquez. Página oficial del curso es: https://sites.google.com/ciencias.unam.mx/introduccion-iot-fc/inicio.
