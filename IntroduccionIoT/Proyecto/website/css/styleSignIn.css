@@ -66,7 +66,7 @@ body {
   
 /* Media queries */
 @media (max-width: 768px) {
- .tabla {
+.tabla {
     width: 100%;
     }
 }
@@ -111,7 +111,7 @@ body {
     position: absolute;
     top: 0;
     left: 5px; 
-    transform: translateY(10px);
+    transform: translateY(20px);
     transition: transform .5s, color .3s;
 
 }
@@ -127,7 +127,7 @@ body {
     border-radius: .5em;
 }
 
-.fomr_line{
+.form_line{
     position: absolute;
     bottom: 0;
     left: 0;

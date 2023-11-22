@@ -4,7 +4,7 @@
 
   // Obtener los datos del formulario
   $username = $_POST["user"];
-  $password = $_POST["pass"];
+  $password = $_POST["password"];
   $email = $_POST["email"];
   // Verificar si la dirección de correo electrónico es válida
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {

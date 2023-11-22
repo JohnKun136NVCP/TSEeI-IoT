@@ -97,7 +97,7 @@ body{
     border-radius: .5em;
 }
 
-.fomr_line{
+.form_line {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -105,10 +105,9 @@ body{
     height: 1px;
     background-color: #3866f2;
     transform: scale(0);
-    transform: left bottom;
+    transform-origin: left bottom;
     transition: transform .4s;
 }
-
 
 .form_input:focus ~ .form_label,
 .form_input:not(:placeholder-shown) ~ .form_label{
