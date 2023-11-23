@@ -69,5 +69,3 @@ Está categorizada en orden ascendente.
 15. [Códigos 15: Bot Telegram](Codigos/BotTelegram/)
 16. [Códigos 16: MariaDB & Mosquitto](Codigos/Database/)
 
-
-
