@@ -69,8 +69,3 @@ Está categorizada en orden ascendente.
 15. [Códigos 15: Bot Telegram](Codigos/BotTelegram/)
 16. [Códigos 16: MariaDB & Mosquitto](Codigos/Database/)
 
-
-
-
-
-Dueño de presentaciones y también material de códigos  de ejemplo es a M. Ing. Valente Vázquez Velázquez. Página oficial del curso es: https://sites.google.com/ciencias.unam.mx/introduccion-iot-fc/inicio.
