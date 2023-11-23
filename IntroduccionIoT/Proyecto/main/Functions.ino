@@ -42,6 +42,7 @@ void idsLedUP(){ //Function to connect a server to send information as WI
 
 
 //Ping tags
+
 void pingTargets(){
   bool google = Ping.ping("www.google.com",pingNumber);
   bool tbs = Ping.ping("www.tbs.co.jp",pingNumber);
