@@ -1,5 +1,5 @@
 #!/bin/bash
-#trap ' ' 2 20
+trap ' ' 2 20
 #Colors
 # Reset
 Color_Off='\033[0m'       # Text Reset
@@ -88,3 +88,4 @@ echo -e "${BYellow}IDS Mirror ESP32"
 echo -e "${BYellow}version 1.0.0. $nameVersion"
 echo -e "${BYellow}Made by:\n\tJohnKun136NVCP (Code)\n\tXianya24 (Codes and documentation)\n\tAlejoCM03 (Web design)"
 echo -e "${Color_Off} "
+trap - 2 20
