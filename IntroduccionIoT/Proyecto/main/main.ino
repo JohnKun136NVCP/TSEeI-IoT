@@ -4,7 +4,7 @@
 #define LED_2 27 
 #define LED_3 26
 #define LED_4 25
-#define Bzzer 4
+#define Bzzer 17
 //LIBRARIES
 //Library for WiFi
 #include <WiFi.h>
