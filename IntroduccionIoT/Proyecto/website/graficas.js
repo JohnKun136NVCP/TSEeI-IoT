@@ -19,7 +19,7 @@ xhr.open('GET', 'datos.php', true);
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: 'Tamaño del paquete a través del tiempo',
+                        label: 'Packet size over time',
                         data: values,
                         borderWidth: 1
                     }]
