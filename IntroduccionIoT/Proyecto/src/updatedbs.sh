@@ -1,4 +1,6 @@
 #!/bin/bash
+trap ' ' 2 20
+
 spinerFunction(){
     local i sp n
     chars="/-\|"
@@ -45,5 +47,4 @@ echo "Exit from VPN..."
 pkill openvpn
 sleep 3
 clear
-
-    
+trap - 2 20
