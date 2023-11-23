@@ -27,8 +27,7 @@ class emailSender(esp32Tools):
         self.smtpServer = Credentials.SMTPSERVER
         self.subject = ""
         self.body   = ""
-        self.smtpProtocol = 465
-        self.certificate = ssl.create_default_context()
+        self.smtpProtocol = 587
     def subjectGet(self,subject):
         self.subject = subject
         return self.subject
@@ -39,7 +38,8 @@ class emailSender(esp32Tools):
         email = EmailMessage()
         email['From'],email["To"],email["subject"] = self.emailSender,self.emailReceiver,self.subject
         email.set_content(self.body)
-        with smtplib.SMTP_SSL(self.smtpServer,self.smtpProtocol,context=self.certificate) as smtpService:
+        with smtplib.SMTP(self.smtpServer,self.smtpProtocol) as smtpService:
+            smtpService.starttls()
             smtpService.login(self.emailSender,self.emailPassword)
             smtpService.sendmail(self.emailSender,self.emailReceiver,email.as_string())
 
