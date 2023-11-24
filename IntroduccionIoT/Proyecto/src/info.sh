@@ -1,5 +1,6 @@
 #!/bin/bash
 trap ' ' 2 20
+clear
 #Colors
 # Reset
 Color_Off='\033[0m'       # Text Reset
@@ -86,6 +87,6 @@ nameVersion="$(cat src/imgascii/versionsProgram.txt)"
 echo -e "${Color_Off}"
 echo -e "${BYellow}IDS Mirror ESP32" 
 echo -e "${BYellow}version 1.0.0. $nameVersion"
-echo -e "${BYellow}Made by:\n\tJohnKun136NVCP (Code)\n\tXianya24 (Codes and documentation)\n\tAlejoCM03 (Web design)"
+echo -e "${BYellow}Made by:\n\tJohnKun136NVCP (Code)\n\tXianya24 (Codes and documentation)\n\tAlejoCM03 (Web front-End)\n\tse2510 (Front-End && Back-End)"
 echo -e "${Color_Off} "
 trap - 2 20
