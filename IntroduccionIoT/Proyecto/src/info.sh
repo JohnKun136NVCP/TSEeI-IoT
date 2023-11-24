@@ -1,6 +1,5 @@
 #!/bin/bash
 trap ' ' 2 20
-clear
 #Colors
 # Reset
 Color_Off='\033[0m'       # Text Reset
