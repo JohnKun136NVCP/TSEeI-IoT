@@ -54,7 +54,7 @@ function esp32Ids(){
     fi
 }
 
-echo -e "${cyan} Welcome to IDS Mirrow, please check, you save  EPSP32's IP address on file. If not it'll take default path (~/pyfiles/.ip/ip.txt)"
+echo -e "${cyan} Welcome to IDS Mirrow, please check, you save  EPSP32's IP address on file."
 file=$1
 if [ ! -z "$file" ]
 then
